@@ -1,0 +1,255 @@
+/*ini adalah css untuk halaman login*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background-image: url('Back.png');
+    background-size: 200% 200%;
+    background-position: 50% 30%;
+    animation: backgroundMove 20s ease infinite;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    /* Untuk membuat responsif */
+    @media (max-width: 768px) {
+        background-size: 100% 100%;
+        background-position: 50% 50%;
+    }
+}
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Untuk membuat responsif */
+    @media (max-width: 768px) {
+        padding: 20px;
+    }
+}
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.login-container img {
+    width: 100px;
+    margin-bottom: 20px;
+    /* Untuk membuat responsif */
+    @media (max-width: 768px) {
+        width: 80px;
+    }
+}
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* Untuk membuat responsif */
+    @media (max-width: 768px) {
+        width: 80%;
+    }
+}
+.login-container button {
+    width: 90%;
+    padding: 10px;
+    background: #0906e2;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    /* Untuk membuat responsif */
+    @media (max-width: 768px) {
+        width: 80%;
+    }
+}
+.login-container button:hover {
+    background: #6966ff;
+}
+/*tutup halaman login*/
+.login-button {
+    padding: 14px 60px;
+    background-color: transparent; /* Membuat tombol transparan */
+    color: 104, 104, 104;
+    border: 2px solid #3498DB; /* Menambahkan border untuk memberikan kontur tombol */
+    border-radius: 20px; /* Memberikan border radius untuk membuat tombol lebih bulat */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Menambahkan transisi untuk efek hover */
+    text-decoration: none; /* Menghilangkan garis bawah untuk membuatnya seperti tombol */
+    position: absolute; /* Mengatur posisi tombol secara absolut */
+    top: 50%; /* Mengatur posisi tombol di tengah secara vertikal */
+    left: 3%; /* Mengatur posisi tombol di tengah secara horizontal */
+    transform: translate(-50%, -50%); /* Mengatur posisi tombol di tengah dengan menggeser ke kiri dan atas */
+}
+.login-button:hover {
+    transform: translateY(-5px) translate(-50%, -50%); /* Memberikan efek hover dengan menggeser tombol sedikit ke atas dan mengatur posisi di tengah */
+    background-color: #3498DB; /* Mengubah warna latar belakang saat di hover */
+    color: white; /* Menambahkan warna putih di tulisan akun saat dihover */
+}
+/*ini adalah code css untuk halaman Upload */
+
+.main-content {
+    flex-grow: 1;
+    padding: 10px; /* Menambahkan jarak antara navbar dan konten */
+    padding-top: 0; /* Mengurangi jarak antara main content dan navbar untuk membuatnya lebih dekat */
+    transition: all 0.3s ease;
+    overflow-y: auto; /* Membuat konten dapat discroll */
+}
+
+.header {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 0; /* Mengurangi margin atas untuk membuatnya lebih dekat dengan navbar */
+    margin-bottom: 8px;
+}
+.activity-box {
+    background-color: white;
+    border-radius: 30px;
+    padding: 180px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid #4e54c8; /* Menambahkan border */
+}
+.activity-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #0906e2, #1baa86);
+    transform: rotate(45deg);
+    z-index: 0;
+    opacity: 0.1;
+    transition: all 0.5s ease;
+}
+.activity-box:hover::before {
+    transform: rotate(45deg) translate(10%, 10%);
+}
+.activity-icon {
+    font-size: 24px;
+    color: #4e54c8;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+.activity-content {
+    position: relative;
+    z-index: 1;
+}
+.activity-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4e54c8;
+}
+.activity-list {
+    list-style-type: none;
+    padding: 0;
+}
+.activity-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f5f5f7;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+    border: 1px solid #e0e0e0; /* Menambahkan border */
+}
+.activity-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.activity-item:nth-child(1) { animation-delay: 0.2s; }
+        .activity-item:nth-child(2) { animation-delay: 0.4s; }
+        .activity-item:nth-child(3) { animation-delay: 0.6s; }
+        .activity-item:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .activity-grid {
+            flex: 1;
+        }
+
+        .recent-activity {
+            width: 350px;
+            background-color: white;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-left: 0; /* Mengatur margin kiri untuk membuatnya berada di kiri */
+        }
+
+        .recent-activity-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #4e54c8;
+        }
+
+        .recent-activity-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .recent-activity-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f5f5f7;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0; /* Menambahkan border */
+        }
+
+        .recent-activity-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        .activity-time {
+            font-weight: bold;
+            color: #4e54c8;
+            margin-right: 10px;
+        }
+
+        .activity-text {
+            color: #333;
+        }
+        body {
+            background-color: #f3f3f3; /* Warna abu-abu muda */
+        }
+
+
+/*ini adalah code css untuk halaman upload Navbar*/
+
