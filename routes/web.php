@@ -33,3 +33,7 @@ Route::get('/upload', function () {
 Route::get('/welcome', function () {
     return view('welcomeslb');
 });
+
+Route::get('/search.slb', function () {
+    return view('search');
+});

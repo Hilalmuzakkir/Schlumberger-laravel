@@ -34,7 +34,7 @@
 <body>
     <!--animasi typing -->
     <div class="main-content" style="text-align: center; width: 50%; margin-top: -400px;">
-        <div class="header" style="font-size: 90px; text-align: left; margin-left: 80px; font-weight: bold;">Organize your data with <span style="color:#3498DB; font-weight: bold;">SLB Data</span></div>
+    <div class="header" style="font-size: 90px; text-align: left; margin-left: 80px; font-weight: bold; display: block;">Organize your data with <span style="color:#3498DB; font-weight: bold;">SLB Data</span></div>
     <p id="typing-text" style="font-size: 20px; text-align: left; margin-left: 80px;"></p>
     <script>
         const text = "With SLB Data, you can manage your data more easily and efficiently. Not only that, you can also access your data anytime and anywhere.";
@@ -48,12 +48,12 @@
             }
         }
 
-        type();
+        document.addEventListener("DOMContentLoaded", type); // Memanggil fungsi type setelah DOM siap
     </script>
     </div>
 
-<a href="http://127.0.0.1:8000/halo" class="login-button" style="animation: fadeIn 1s ease forwards, moveImage 3s ease infinite; position: absolute; top: 53%; left: 9%; transform: translate(-50%, -50%);">Login</a>
-<a href="#" onclick="openPopup()" style="animation: fadeIn 1s ease forwards; position: absolute; top: 53%; left: 17%; transform: translate(-50%, -50%); color: #eb380b; text-decoration: none;">Request Access</a> 
+<a href="halo.blade.php" class="login-button" style="animation: fadeIn 1s ease forwards, moveImage 3s ease infinite; position: absolute; top: 53%; left: 5%; transform: translate(-50%, -50%);">Login</a>
+<a href="#" onclick="openPopup()" style="animation: fadeIn 1s ease forwards; position: absolute; top: 55%; left: 15%; transform: translate(-50%, -50%); color: #eb380b; text-decoration: none;">Request Access</a> 
 
 <!-- Tambahkan kode untuk pop-up -->
 <div id="popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; border:1px solid #ccc; padding:80px; z-index:1000; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); backdrop-filter: blur(70px);">

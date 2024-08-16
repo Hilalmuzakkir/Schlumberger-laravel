@@ -1,3 +1,29 @@
+/*Ini adalah css untuk halaman welcome*/
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Naik 20px */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+
 /*ini adalah css untuk halaman login*/
 
 body {
@@ -6,7 +32,7 @@ body {
     align-items: center;
     height: 100vh;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
-    background-image: url('Back.png');
+    background-image: url('');
     background-size: 200% 200%;
     background-position: 50% 30%;
     animation: backgroundMove 20s ease infinite;
@@ -253,3 +279,122 @@ body {
 
 /*ini adalah code css untuk halaman upload Navbar*/
 
+.buy-button {
+            transition: all 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #4CAF50 !important;
+            color: white !important;
+        }
+
+/* Css untuk halaman home */
+
+.latar-belakang {
+    background-image: url('slbarab.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+.lapisan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.kontainer-teks {
+    position: relative;
+    z-index: 1;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.jam-digital {
+    font-size: 24px;
+    margin-top: 20px;
+    font-family: 'Digital-7', monospace;
+}
+@keyframes kedip {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.kedip {
+    animation: kedip 1s infinite;
+}
+
+
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 10px;
+    }   
+    .feature-box {
+        background-color: white;
+        border-radius: 18px;
+        padding: 40px;
+        box-shadow: 0 4px 6px rgba(29, 28, 28, 0.1);
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+        animation-delay: 0.7s;
+    }
+    .feature-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 12px rgba(18, 20, 24, 0.15);
+        background-color: #f5f5f7; /* Menambahkan warna latar belakang saat di hover */
+    }
+    .feature-title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    .feature-description {
+        color: #86868b;
+        line-height: 1.5;
+        text-align: left;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .latar-belakang-2{
+        background-image: url('about2.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 50vh;
+        position: relative;
+        overflow-y: auto;
+    }
+    .lapisan-2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .kontainer-teks-2 {
+        position: relative;
+        z-index: 1;
+        padding-top: 150px;
+        color: white;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
