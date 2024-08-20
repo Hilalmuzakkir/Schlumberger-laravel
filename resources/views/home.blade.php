@@ -182,13 +182,13 @@
 
         </head>
         <div class="feature-grid">
-            <div class="feature-box animated" onclick="window.location.href=''"
+            <div class="feature-box animated" onclick="window.location.href='/upload'"
                 style="cursor: pointer; transition: transform 0.8s ease;">
                 <i class="bi bi-upload" style="font-size: 24px;"></i>
                 <div class="feature-title">Upload Document</div>
                 <div class="feature-description">Start uploading your new CSV file easily and quickly.</div>
             </div>
-            <div class="feature-box animated" onclick="window.location.href='/search'"
+            <div class="feature-box animated" onclick="window.location.href='/search-slb'"
                 style="cursor: pointer; transition: transform 0.8s ease;">
                 <i class="bi bi-eye"></i>
                 <div class="feature-title">Search Document</div>
