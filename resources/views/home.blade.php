@@ -19,8 +19,8 @@
         <ul class="menu">
             <li><a href="/home">Home</a></li>
             <li><a href="#layanan.blade.php">Service</a></li>
-            <li><a href="#layanan3">About</a></li>
-            <li><a href="#layanan4">Contact</a></li>
+            <li><a href="https://www.slb.com" target="_blank">About</a></li>
+            <li><a href="mailto:muzakkiralhilal@gmail.com">Contact</a></li>
             @if (Auth::check())
                 <li><a href="/logout">Logout</a></li>
             @endif
@@ -151,6 +151,10 @@
             }
 
             window.onload = function() {
+                @if(session('username'))
+                    alert("Selamat datang, {{ session('username') }}!");
+                    @php session()->forget('username'); @endphp
+                @endif
                 ketikTeks(document.getElementById("judul"), "Welcome SLB Teams", 100);
                 setTimeout(function() {
                     ketikTeks(document.getElementById("subjudul"), "For Better Planet", 100);

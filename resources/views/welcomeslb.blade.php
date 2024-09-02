@@ -52,8 +52,8 @@
     </script>
     </div>
 
-<a href="halo.blade.php" class="login-button" style="animation: fadeIn 1s ease forwards, moveImage 3s ease infinite; position: absolute; top: 53%; left: 5%; transform: translate(-50%, -50%);">Login</a>
-<a href="#" onclick="openPopup()" style="animation: fadeIn 1s ease forwards; position: absolute; top: 55%; left: 15%; transform: translate(-50%, -50%); color: #eb380b; text-decoration: none;">Request Access</a> 
+<a href="/login" class="login-button" style="animation: fadeIn 1s ease forwards, moveImage 3s ease infinite; position: absolute; top: 53%; left: 5%; transform: translate(-50%, -50%);">Login</a>
+<a href="mailto:AMuzakkir@slb.com" style="animation: fadeIn 1s ease forwards; position: absolute; top: 55%; left: 15%; transform: translate(-50%, -50%); color: #eb380b; text-decoration: none;">Request Access</a>
 
 <!-- Tambahkan kode untuk pop-up -->
 <div id="popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; border:1px solid #ccc; padding:80px; z-index:1000; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); backdrop-filter: blur(70px);">

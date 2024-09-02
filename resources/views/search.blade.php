@@ -239,7 +239,7 @@
     <!-- Modal Detail Dokumen -->
     <div class="modal fade" id="documentDetailsModal" tabindex="-1" role="dialog"
         aria-labelledby="documentDetailsModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="documentDetailsModalLabel">Detail Dokumen</h5>
@@ -252,6 +252,7 @@
                     <p><strong>Nama Dokumen:</strong> <span id="docName"></span></p>
                     <p><strong>Tanggal:</strong> <span id="docDate"></span></p>
                     <p><strong>Deskripsi:</strong> <span id="docDescription"></span></p>
+                    <div id="docTable"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -269,6 +270,44 @@
             document.getElementById('docName').innerText = name;
             document.getElementById('docDate').innerText = date;
             document.getElementById('docDescription').innerText = description;
+
+            // Fetch table data
+            fetch(`/api/document-table/${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    let tableHtml = `
+                        <table class="table table-bordered mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Column 1</th>
+                                    <th>Column 2</th>
+                                    <th>Column 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+
+                    data.forEach(row => {
+                        tableHtml += `
+                            <tr>
+                                <td>${row.column1}</td>
+                                <td>${row.column2}</td>
+                                <td>${row.column3}</td>
+                            </tr>
+                        `;
+                    });
+
+                    tableHtml += `
+                            </tbody>
+                        </table>
+                    `;
+
+                    document.getElementById('docTable').innerHTML = tableHtml;
+                })
+                .catch(error => {
+                    console.error('Error fetching table data:', error);
+                    document.getElementById('docTable').innerHTML = '<p>Error loading table data.</p>';
+                });
 
             $('#documentDetailsModal').modal('show');
         }

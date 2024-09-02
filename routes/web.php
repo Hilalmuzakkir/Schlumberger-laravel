@@ -44,3 +44,8 @@ Route::middleware('auth')->group(function() {
 Route::get('/welcome', function () {
     return view('welcomeslb');
 });
+Route::get('/note', function () {
+    return view('note');
+});
+
+Route::get('/document-table/{id}', 'DocumentController@getTableData');

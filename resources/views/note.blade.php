@@ -133,6 +133,37 @@
                 max-width: 100%;
             }
         }
+        .note-section {
+            background-color: #f5f5f5;
+            padding: 50px 0;
+        }
+        .note-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        #note-input {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        #notes-list {
+            margin-top: 30px;
+        }
+        .note-item {
+            background-color: #f9f9f9;
+            border-left: 4px solid #606676;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -153,56 +184,51 @@
         </div>
     </div>
 
-    <section id="layanan2" class="content-section">
-        <div class="content-text">
-            <h2>Access Request</h2>
-            <p>Request access to our 24/7 IT team.</p>
-            <a href="https://outlook.office.com/mail/deeplink/compose?to=AMuzakkir@slb.com&subject=Access%20Request" class="action-button" target="_blank">Request Access</a>
+    <div class="note-section">
+        <div class="note-container">
+            <h2>Personal Notes</h2>
+            <textarea id="note-input" placeholder="Type your note here..."></textarea>
+            <button id="save-note" class="action-button">Save Note</button>
+            <div id="notes-list"></div>
         </div>
-        <div class="content-image">
-            <img src="layanan2.jpg" alt="Layanan 2">
-        </div>
-    </section>
-
-    <section id="layanan3" class="content-section">
-        <div class="content-image">
-            <img src="layanan3.jpg" alt="Layanan 3">
-        </div>
-        <div class="content-text">
-            <h2>Other Complaint</h2>
-            <p>Temukan fitur-fitur yang kami tawarkan untuk meningkatkan pengalaman Anda.</p>
-            <button class="action-button">Contact Team</button>
-        </div>
-    </section>
+    </div>
 
     <script>
-        function ketikTeks(elemen, teks, kecepatan) {
-            let i = 0;
-            function ketik() {
-                if (i < teks.length) {
-                    elemen.innerHTML += teks.charAt(i);
-                    i++;
-                    setTimeout(ketik, kecepatan);
+        document.addEventListener('DOMContentLoaded', function() {
+            const noteInput = document.getElementById('note-input');
+            const saveButton = document.getElementById('save-note');
+            const notesList = document.getElementById('notes-list');
+
+            // Load existing notes from localStorage
+            const loadNotes = () => {
+                const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+                notesList.innerHTML = '';
+                savedNotes.forEach(note => {
+                    const noteItem = document.createElement('div');
+                    noteItem.className = 'note-item';
+                    noteItem.textContent = note;
+                    notesList.prepend(noteItem);
+                });
+            };
+
+            // Initial load of notes
+            loadNotes();
+
+            saveButton.addEventListener('click', function() {
+                const noteText = noteInput.value.trim();
+                if (noteText) {
+                    // Save note to localStorage
+                    const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+                    savedNotes.unshift(noteText);
+                    localStorage.setItem('notes', JSON.stringify(savedNotes));
+
+                    // Clear input and reload notes
+                    noteInput.value = '';
+                    loadNotes();
                 }
-            }
-            ketik();
-        }
-
-        window.onload = function() {
-            ketikTeks(document.getElementById("judul"), "Customer Support", 100);
-            setTimeout(function() {
-                ketikTeks(document.getElementById("subjudul"), "SLB |For Better Planet", 100);
-            }, 2000);
-        };
-
-        window.addEventListener('scroll', function() {
-            var scrollPosition = window.pageYOffset;
-            var judul = document.getElementById('judul');
-            var subjudul = document.getElementById('subjudul');
-            
-            judul.style.transform = 'scale(' + (1 - scrollPosition * 0.001) + ')';
-            subjudul.style.transform = 'scale(' + (1 - scrollPosition * 0.001) + ')';
+            });
         });
+    </script>
     </script>
 </body>
 </html>

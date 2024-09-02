@@ -37,4 +37,11 @@ class SearchController extends Controller
         }
     }
 
+    public function getTableData($id)
+    {
+        // Fetch and return the table data for the given document ID
+        $tableData = YourTableModel::where('document_id', $id)->get();
+        return response()->json($tableData);
+    }
+
 }

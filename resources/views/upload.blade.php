@@ -9,9 +9,48 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Halaman Beranda</title>
     <!--Navbar Section-->
+     <nav class="navbar">
+      <ul class="menu">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/layanan.slb">Service</a></li>
+          <li><a href="https://www.slb.com" target="_blank">About</a></li>
+          <li><a href="#layanan4">Contact</a></li>
+      </ul>
+  </nav>
+  <!-- ... existing code ... -->
+  <style>
+      .navbar {
+          background-color: rgba(0, 0, 0, 0.0);
+          padding: 10px;
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+      }
+      .menu {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          margin: 0;
+          padding: 0;
+      }
+      .menu li {
+          margin: 0 15px;
+      }
+      .menu a {
+          color: black;
+          text-decoration: none;
+          font-size: 18px;
+          transition: color 0.3s, transform 0.3s;
+      }
+      .menu a:hover {
+          color: #ffcc00;
+          transform: scale(1.1);
+      }
+  </style>
 </head>
 
-<div class="main-content" style="margin-top: -500px;"> <!-- Menambahkan jarak antara navbar dan content -->
+<div class="main-content" style="margin-top: -80px;"> <!-- Menambahkan jarak antara navbar dan content -->
     <div class="content-wrapper">
         <div class="activity-grid">
             <div class="activity-box animated">
@@ -47,8 +86,7 @@
         </div>
     </div>
 </div>
-<div class="login-button"
-    style="animation: fadeIn 1s ease forwards, moveImage 3s ease infinite; position: absolute; top: 55%; left: 7%; transform: translate(-50%, -50%);"
+<div class="login-button" style="margin-top: 230px; position: absolute; top: 50%; left: 10%; transform: translate(-50%, -50%);"
     data-bs-toggle="modal" data-bs-target="#formUpload">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
         class="bi bi-clipboard2-plus" viewBox="0 0 16 16">
@@ -62,31 +100,30 @@
 
 <div class="modal fade" id="formUpload" tabindex="-1" aria-labelledby="formUploadLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="formUploadLabel">Formulir Upload File</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content bg-light">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="formUploadLabel">Upload File</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="/upload" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="filename" class="form-label">Nama File</label>
-                        <input type="text" class="form-control" id="filename" name="filename" required>
+                    <div class="mb-4 animate__animated animate__fadeInUp">
+                        <label for="filename" class="form-label">File Name</label>
+                        <input type="text" class="form-control border-0 border-bottom" id="filename" name="filename" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="date" class="form-label">Tanggal</label>
-                        <input type="date" class="form-control" id="date" name="date" required>
+                    <div class="mb-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="form-control border-0 border-bottom" id="date" name="date" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-4 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
                         <label for="file" class="form-label">File</label>
-                        <input type="file" class="form-control" id="file" name="file" accept=".csv"
-                            required>
+                        <input type="file" class="form-control border-0 border-bottom" id="file" name="file" accept=".csv" required>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save File</button>
+                    <button type="submit" class="btn btn-primary animate__animated animate__pulse animate__infinite">Save File</button>
                 </div>
             </form>
         </div>
@@ -97,21 +134,35 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+
 <script>
     document.getElementById('file').addEventListener('change', function() {
         const file = this.files[0];
         const fileType = file.type;
         if (fileType !== 'text/csv') {
-            alert('Hanya File CSV yang diizinkan.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Only CSV files are allowed!',
+            });
             this.value = '';
         }
     });
 
     @if (session('success'))
-        alert('{{ session('success') }}')
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: '{{ session('success') }}',
+        });
     @endif
 
     @if (session('error'))
-        alert('{{ session('error') }}')
+        Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: '{{ session('error') }}',
+        });
     @endif
 </script>
