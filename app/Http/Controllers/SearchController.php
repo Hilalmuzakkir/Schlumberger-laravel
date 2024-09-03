@@ -37,6 +37,27 @@ class SearchController extends Controller
         }
     }
 
+    public function showFile($id) {
+        $file = FileStorages::findOrFail($id);
+        $filePath = Storage::disk('public')->path($file->path);
+
+        $csvData = [];
+        if (file_exists($filePath)) {
+            if (($handle = fopen($filePath, 'r')) !== false) {
+                while (($data = fgetcsv($handle, 1000, ',')) !== false) {
+                    $csvData[] = $data;
+                }
+                fclose($handle);
+            } else {
+                return redirect()->back()->with('error', 'Gagal membuka file.');
+            }
+        } else {
+            return redirect()->back()->with('error', 'File tidak ditemukan.');
+        }
+
+        return view('show_csv', ['csvData' => $csvData]);
+    }
+
     public function getTableData($id)
     {
         // Fetch and return the table data for the given document ID

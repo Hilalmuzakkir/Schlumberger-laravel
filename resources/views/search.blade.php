@@ -209,6 +209,7 @@
                     <th>ID</th>
                     <th>Nama Dokumen</th>
                     <th>Tanggal</th>
+                    <th>Upload By</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -218,9 +219,12 @@
                         <td>{{ $file->id }}</td>
                         <td>{{ $file->filename }}</td>
                         <td>{{ $file->date }}</td>
+                        <td>{{ $file->User->name }}</td>
                         <td>
                             <button class="btn btn-primary"
                                 onclick="showDocumentDetails({{ $file->id }}, '{{ $file->filename }}', '{{ $file->date }}', '{{ $file->description ?? 'Tidak ada deskripsi.' }}')">Lihat</button>
+                            <a href="{{ route('lihat-slb', ['id' => $file->id]) }}" class="btn btn-success">Lihat
+                                File</a>
                             <a href="{{ route('download-slb', ['id' => $file->id]) }}"
                                 class="btn btn-success">Download</a>
                             <form action="{{ route('delete-slb', ['id' => $file->id]) }}" method="POST"

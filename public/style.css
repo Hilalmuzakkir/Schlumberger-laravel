@@ -4,18 +4,23 @@
         transform: translateX(100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
     }
 }
+
 @keyframes slideUpDown {
     0% {
         transform: translateY(0);
     }
+
     50% {
-        transform: translateY(-20px); /* Naik 20px */
+        transform: translateY(-20px);
+        /* Naik 20px */
     }
+
     100% {
         transform: translateY(0);
     }
@@ -38,35 +43,42 @@ body {
     animation: backgroundMove 20s ease infinite;
     font-family: Arial, sans-serif;
     overflow: hidden;
+
     /* Untuk membuat responsif */
     @media (max-width: 768px) {
         background-size: 100% 100%;
         background-position: 50% 50%;
     }
 }
+
 .login-container {
     background: white;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
+
     /* Untuk membuat responsif */
     @media (max-width: 768px) {
         padding: 20px;
     }
 }
+
 .login-container h2 {
     margin-bottom: 20px;
     color: #333;
 }
+
 .login-container img {
     width: 100px;
     margin-bottom: 20px;
+
     /* Untuk membuat responsif */
     @media (max-width: 768px) {
         width: 80px;
     }
 }
+
 .login-container input[type="text"],
 .login-container input[type="password"] {
     width: 90%;
@@ -74,11 +86,13 @@ body {
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+
     /* Untuk membuat responsif */
     @media (max-width: 768px) {
         width: 80%;
     }
 }
+
 .login-container button {
     width: 90%;
     padding: 10px;
@@ -89,42 +103,62 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
+
     /* Untuk membuat responsif */
     @media (max-width: 768px) {
         width: 80%;
     }
 }
+
 .login-container button:hover {
     background: #6966ff;
 }
+
 /*tutup halaman login*/
 .login-button {
     padding: 14px 60px;
-    background-color: transparent; /* Membuat tombol transparan */
+    background-color: transparent;
+    /* Membuat tombol transparan */
     color: 104, 104, 104;
-    border: 2px solid #3498DB; /* Menambahkan border untuk memberikan kontur tombol */
-    border-radius: 20px; /* Memberikan border radius untuk membuat tombol lebih bulat */
+    border: 2px solid #3498DB;
+    /* Menambahkan border untuk memberikan kontur tombol */
+    border-radius: 20px;
+    /* Memberikan border radius untuk membuat tombol lebih bulat */
     cursor: pointer;
-    transition: transform 0.3s ease; /* Menambahkan transisi untuk efek hover */
-    text-decoration: none; /* Menghilangkan garis bawah untuk membuatnya seperti tombol */
-    position: absolute; /* Mengatur posisi tombol secara absolut */
-    top: 50%; /* Mengatur posisi tombol di tengah secara vertikal */
-    left: 3%; /* Mengatur posisi tombol di tengah secara horizontal */
-    transform: translate(-50%, -50%); /* Mengatur posisi tombol di tengah dengan menggeser ke kiri dan atas */
+    transition: transform 0.3s ease;
+    /* Menambahkan transisi untuk efek hover */
+    text-decoration: none;
+    /* Menghilangkan garis bawah untuk membuatnya seperti tombol */
+    position: absolute;
+    /* Mengatur posisi tombol secara absolut */
+    top: 50%;
+    /* Mengatur posisi tombol di tengah secara vertikal */
+    left: 3%;
+    /* Mengatur posisi tombol di tengah secara horizontal */
+    transform: translate(-50%, -50%);
+    /* Mengatur posisi tombol di tengah dengan menggeser ke kiri dan atas */
 }
+
 .login-button:hover {
-    transform: translateY(-5px) translate(-50%, -50%); /* Memberikan efek hover dengan menggeser tombol sedikit ke atas dan mengatur posisi di tengah */
-    background-color: #3498DB; /* Mengubah warna latar belakang saat di hover */
-    color: white; /* Menambahkan warna putih di tulisan akun saat dihover */
+    transform: translateY(-5px) translate(-50%, -50%);
+    /* Memberikan efek hover dengan menggeser tombol sedikit ke atas dan mengatur posisi di tengah */
+    background-color: #3498DB;
+    /* Mengubah warna latar belakang saat di hover */
+    color: white;
+    /* Menambahkan warna putih di tulisan akun saat dihover */
 }
+
 /*ini adalah code css untuk halaman Upload */
 
 .main-content {
     flex-grow: 1;
-    padding: 10px; /* Menambahkan jarak antara navbar dan konten */
-    padding-top: 0; /* Mengurangi jarak antara main content dan navbar untuk membuatnya lebih dekat */
+    padding: 10px;
+    /* Menambahkan jarak antara navbar dan konten */
+    padding-top: 0;
+    /* Mengurangi jarak antara main content dan navbar untuk membuatnya lebih dekat */
     transition: all 0.3s ease;
-    overflow-y: auto; /* Membuat konten dapat discroll */
+    overflow-y: auto;
+    /* Membuat konten dapat discroll */
 }
 
 .header {
@@ -134,23 +168,28 @@ body {
     opacity: 0;
     animation: fadeIn 1s ease forwards;
 }
+
 .activity-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    margin-top: 0; /* Mengurangi margin atas untuk membuatnya lebih dekat dengan navbar */
+    margin-top: 0;
+    /* Mengurangi margin atas untuk membuatnya lebih dekat dengan navbar */
     margin-bottom: 8px;
 }
+
 .activity-box {
     background-color: white;
     border-radius: 30px;
     padding: 180px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    border: 2px solid #4e54c8; /* Menambahkan border */
+    border: 2px solid #4e54c8;
+    /* Menambahkan border */
 }
+
 .activity-box::before {
     content: '';
     position: absolute;
@@ -164,9 +203,11 @@ body {
     opacity: 0.1;
     transition: all 0.5s ease;
 }
+
 .activity-box:hover::before {
     transform: rotate(45deg) translate(10%, 10%);
 }
+
 .activity-icon {
     font-size: 24px;
     color: #4e54c8;
@@ -174,20 +215,24 @@ body {
     position: relative;
     z-index: 1;
 }
+
 .activity-content {
     position: relative;
     z-index: 1;
 }
+
 .activity-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
     color: #4e54c8;
 }
+
 .activity-list {
     list-style-type: none;
     padding: 0;
 }
+
 .activity-item {
     margin-bottom: 15px;
     padding: 15px;
@@ -196,96 +241,116 @@ body {
     transition: all 0.3s ease;
     opacity: 0;
     animation: slideIn 0.5s ease-out forwards;
-    border: 1px solid #e0e0e0; /* Menambahkan border */
+    border: 1px solid #e0e0e0;
+    /* Menambahkan border */
 }
+
 .activity-item:hover {
     transform: translateX(10px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-.activity-item:nth-child(1) { animation-delay: 0.2s; }
-        .activity-item:nth-child(2) { animation-delay: 0.4s; }
-        .activity-item:nth-child(3) { animation-delay: 0.6s; }
-        .activity-item:nth-child(4) { animation-delay: 0.8s; }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+.activity-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
 
-        .content-wrapper {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-        }
+.activity-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
 
-        .activity-grid {
-            flex: 1;
-        }
+.activity-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
 
-        .recent-activity {
-            width: 350px;
-            background-color: white;
-            border-radius: 30px;
-            padding: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            margin-left: 0; /* Mengatur margin kiri untuk membuatnya berada di kiri */
-        }
+.activity-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
 
-        .recent-activity-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #4e54c8;
-        }
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
 
-        .recent-activity-list {
-            list-style-type: none;
-            padding: 0;
-        }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
-        .recent-activity-item {
-            margin-bottom: 15px;
-            padding: 15px;
-            background-color: #f5f5f7;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            border: 1px solid #e0e0e0; /* Menambahkan border */
-        }
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
 
-        .recent-activity-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        }
+.activity-grid {
+    flex: 1;
+}
 
-        .activity-time {
-            font-weight: bold;
-            color: #4e54c8;
-            margin-right: 10px;
-        }
+.recent-activity {
+    width: 350px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-left: 0;
+    /* Mengatur margin kiri untuk membuatnya berada di kiri */
+}
 
-        .activity-text {
-            color: #333;
-        }
-        body {
-            background-color: #f3f3f3; /* Warna abu-abu muda */
-        }
+.recent-activity-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4e54c8;
+}
+
+.recent-activity-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recent-activity-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f5f5f7;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    /* Menambahkan border */
+}
+
+.recent-activity-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.activity-time {
+    font-weight: bold;
+    color: #4e54c8;
+    margin-right: 10px;
+}
+
+.activity-text {
+    color: #333;
+}
+
+body {
+    background-color: #f3f3f3;
+    /* Warna abu-abu muda */
+}
 
 
 /*ini adalah code css untuk halaman upload Navbar*/
 
 .buy-button {
-            transition: all 0.3s ease;
-        }
-        .buy-button:hover {
-            background-color: #4CAF50 !important;
-            color: white !important;
-        }
+    transition: all 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #4CAF50 !important;
+    color: white !important;
+}
 
 /* Css untuk halaman home */
 
@@ -299,6 +364,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .lapisan {
     position: absolute;
     top: 0;
@@ -307,6 +373,7 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 .kontainer-teks {
     position: relative;
     z-index: 1;
@@ -317,84 +384,108 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .jam-digital {
     font-size: 24px;
     margin-top: 20px;
     font-family: 'Digital-7', monospace;
 }
+
 @keyframes kedip {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
+
 .kedip {
     animation: kedip 1s infinite;
 }
-
-
 
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     gap: 10px;
-    }   
-    .feature-box {
-        background-color: white;
-        border-radius: 18px;
-        padding: 40px;
-        box-shadow: 0 4px 6px rgba(29, 28, 28, 0.1);
-        transition: all 0.3s ease;
+}
+
+.feature-box {
+    background-color: white;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(29, 28, 28, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.7s;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(18, 20, 24, 0.15);
+    background-color: #f5f5f7;
+    /* Menambahkan warna latar belakang saat di hover */
+}
+
+.feature-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.feature-description {
+    color: #86868b;
+    line-height: 1.5;
+    text-align: left;
+}
+
+@keyframes fadeIn {
+    from {
         opacity: 0;
-        animation: fadeIn 1s ease forwards;
-        animation-delay: 0.7s;
-    }
-    .feature-box:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 12px rgba(18, 20, 24, 0.15);
-        background-color: #f5f5f7; /* Menambahkan warna latar belakang saat di hover */
-    }
-    .feature-title {
-        font-size: 22px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        text-align: left;
-    }
-    .feature-description {
-        color: #86868b;
-        line-height: 1.5;
-        text-align: left;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+        transform: translateY(20px);
     }
 
-    .latar-belakang-2{
-        background-image: url('about2.jpg');
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 50vh;
-        position: relative;
-        overflow-y: auto;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    .lapisan-2 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    .kontainer-teks-2 {
-        position: relative;
-        z-index: 1;
-        padding-top: 150px;
-        color: white;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+}
+
+.latar-belakang-2 {
+    background-image: url('about2.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 50vh;
+    position: relative;
+    overflow-y: auto;
+}
+
+.lapisan-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.kontainer-teks-2 {
+    position: relative;
+    z-index: 1;
+    padding-top: 150px;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

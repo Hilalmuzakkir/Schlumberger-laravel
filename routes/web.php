@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/search-slb', [SearchController::class, 'index']);
     Route::delete('/delete-slb/{id}', [SearchController::class, 'delete'])->name('delete-slb');
     Route::get('/download-slb/{id}', [SearchController::class, 'download'])->name('download-slb');
+    Route::get('/lihat-slb/{id}', [SearchController::class, 'showFile'])->name('lihat-slb');
 });
 
 Route::get('/welcome', function () {
