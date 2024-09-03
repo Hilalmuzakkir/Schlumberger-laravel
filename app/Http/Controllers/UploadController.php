@@ -17,7 +17,7 @@ class UploadController extends Controller
         $request->validate([
             'filename' => 'required|string|max:255',
             'date' => 'required|date',
-            'file' => 'required|mimes:csv,txt|max:2048', //ukuran maksimal 2MB
+            'file' => 'required|mimes:csv,txt|max:30720', // maximum file size 30MB
         ]);
 
         $file = $request->file('file');
